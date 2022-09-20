@@ -12,20 +12,22 @@ For the simulation of MHT proof generation and verification, we run the code in 
    
 1. Compile  
 ```shell
+cd experiment
 mkdir build; cd build; cmake ..; make
 ```
 2. Setup  
 ```shell
+cd merkle
 ./merkle setup
 ```
 3. Prove  
+// The depth of the MHT is set to 4, which can be modified in the main.cpp. We randomly generate the values of the leaf nodes for the tree. [index] refers to the index of the leaf node that needs to be proved. For example, [index] can be 3. Record the root value of the tree, which is used in the verification.   
 ```shell
-//The depth of the MHT is set to 4, which can be modified in the main.cpp. We randomly generate the values of the leaf nodes for the tree. [index] refers to the index of the leaf node that needs to be proved. Record the root value of the tree, which is used in the verification.
 ./merkle prove [index]
 ``` 
-4. Verify  
+4. Verify    
+// The root value is needed.  
 ```shell
-//Input the root value 
 ./merkle verify [root]
 ```
 
